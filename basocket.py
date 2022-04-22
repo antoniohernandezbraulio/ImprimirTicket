@@ -41,16 +41,18 @@ def imprimir(payload):
     print('Va todo la impresión Andres=>',payload)
     c = Conector()
     c.texto(payload)
-    c.establecerEnfatizado(1)
+    c.establecerTamanioFuente(8,8)
     c.feed(5)
     c.cortar()
-    c.abrirCajon()
+    c.cortarParcialmente()
+
     print("Imprimiendo...")
 
     f=open("conf.txt")
     impresora = f.read()
     respuesta = c.imprimirEn(impresora)
     f.close()
+
     if respuesta == True:
         print("Impresión correcta")
         return "Impresión correcta"
