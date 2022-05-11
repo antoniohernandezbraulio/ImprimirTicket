@@ -6,10 +6,14 @@
 var exampleSocket = new WebSocket("ws://127.0.0.1:8001");
 //El envio
 function sendText() {
-  var msg = {
-    action: "imprimir",
-    date: Date.now()
-  };
+  var msg = 
+  [
+    {
+      "productName":"Cerveza victoria",
+      "internalCode":"CV0005673",
+      "codebar":"1365895654123"
+    }
+];
   exampleSocket.send(JSON.stringify(msg));
   
 } 
